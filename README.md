@@ -1,6 +1,6 @@
 # Geomatic Assessment
 
-This repository contains a full-stack geospatial web mapping application developed for the Geomatic assessment. The project integrates a Python backend using FastAPI to serve geospatial data and a React frontend using the ArcGIS API for JavaScript for interactive mapping. The application demonstrates functionality such as spatial filtering, proximity searches, user-drawn queries, and dynamic data visualization with charts.
+This repository hosts a full-stack geospatial web mapping application developed as a submission for Geomatic's assessment. The project integrates a Python backend using FastAPI to serve geospatial data and a React frontend using the ArcGIS API for JavaScript for interactive mapping. The application demonstrates functionality such as spatial filtering, proximity searches, user-drawn queries, and dynamic data visualization with charts.
 
 ## Table of Contents
 
@@ -20,7 +20,7 @@ This repository contains a full-stack geospatial web mapping application develop
 
 - **Interactive Map:**
   - Displays geospatial layers (regions, provinces, transport stations) using ArcGIS API.
-  - Includes native ArcGIS widgets (Basemap Gallery, Layer List, Search, Legend) for enhanced usability.
+  - Includes native ArcGIS widgets (Basemap Gallery, Layer List, Search, Legend).
 
 - **Spatial Queries and Filtering:**
   - Filter data by region or province.
@@ -54,17 +54,18 @@ This repository contains a full-stack geospatial web mapping application develop
 │   ├── provinces.geojson     # GeoJSON data for provinces
 │   ├── regions.geojson       # GeoJSON data for regions
 │   └── transport_stations.csv# CSV data for transport stations
-├── package.json              # Frontend dependencies and scripts
-├── public/
-│   └── index.html            # HTML entry point for the React app
-└── src/
-    ├── App.js                # Main React component; integrates MapContainer and Sidebar
-    ├── App.css               # Global styles (if any)
-    └── components/
-        ├── MapContainer.js   # Map component using ArcGIS API; handles layers, queries, and drawing
-        ├── MapContainer.css  # Styling for MapContainer
-        ├── Sidebar.js        # Sidebar controls for filters, queries, and chart display
-        └── Sidebar.css       # Styling for Sidebar
+├── frontend/                 # Frontend directory containing:
+│   ├── package.json              # Frontend dependencies and scripts
+│   ├── public/
+│   │   └── index.html            # HTML entry point for the React app
+│   └── src/
+│       ├── App.js                # Main React component; integrates MapContainer and Sidebar
+│       ├── App.css               # Global styles
+│       └── components/
+│           ├── MapContainer.js   # Map component using ArcGIS API; handles layers, queries, and drawing
+│           ├── MapContainer.css  # Styling for MapContainer
+│           ├── Sidebar.js        # Sidebar controls for filters, queries, and chart display
+│           └── Sidebar.css       # Styling for Sidebar  
 ```
 
 ## Setup and Installation
@@ -111,7 +112,7 @@ This repository contains a full-stack geospatial web mapping application develop
 5. **Run the Backend Server:**
 
    ```bash
-   uvicorn main:app --reload
+   uvicorn main:app --host 0.0.0.0 --port 8000 --reload
    ```
 
    The API will be available at [http://localhost:8000](http://localhost:8000).
@@ -153,7 +154,7 @@ This repository contains a full-stack geospatial web mapping application develop
 
 3. **API Endpoints:**
    - **`GET /`**: Welcome message.
-   - - **`GET /docs`**: the Swagger UI of the API.
+   - **`GET /docs`**: the Swagger UI of the API.
    - **`GET /provinces`**: Returns provinces GeoJSON.
    - **`GET /regions`**: Returns regions GeoJSON.
    - **`GET /transport-stations`**: Returns transport stations data (optionally filtered by transport type using query parameters).
@@ -163,7 +164,7 @@ This repository contains a full-stack geospatial web mapping application develop
 - **Approach:**
   - **Backend:** The backend is built with FastAPI to quickly serve geospatial data from static files and CSVs. Data cleaning is performed using Pandas and NumPy before serving JSON responses.
   - **Frontend:** The React application uses the ArcGIS API to integrate a full-featured map with various layers and interactive tools. The Sidebar component allows users to interactively filter and query data, which updates both the map view and associated charts.
-  - **Integration:** Communication between the frontend and backend is facilitated through RESTful API endpoints, ensuring that transport stations is dynamically loaded into the map.
+  - **Integration:** Communication between the frontend and backend is facilitated through RESTful API endpoints, ensuring that dataset layers are dynamically loaded into the map.
   
 - **Assumptions:**
   - Data files (GeoJSON and CSV) are formatted and placed in the expected directories.
