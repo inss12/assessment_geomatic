@@ -10,8 +10,6 @@ This repository contains a full-stack geospatial web mapping application develop
 - [Setup and Installation](#setup-and-installation)
 - [Usage](#usage)
 - [Approach and Assumptions](#approach-and-assumptions)
-- [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ## Features
@@ -99,14 +97,6 @@ This repository contains a full-stack geospatial web mapping application develop
 
 3. **Install Python Dependencies:**
 
-   If a `requirements.txt` is available:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-   Otherwise, manually install dependencies:
-
    ```bash
    pip install fastapi uvicorn pandas numpy python-multipart
    ```
@@ -130,7 +120,9 @@ This repository contains a full-stack geospatial web mapping application develop
 
 1. **Navigate to the Frontend Directory:**
 
-   The `package.json` file is located in the root of the repository if the project is not split into multiple folders.
+   ```bash
+   cd frontend/
+   ```
 
 2. **Install npm Dependencies:**
 
@@ -177,23 +169,8 @@ This repository contains a full-stack geospatial web mapping application develop
   - Data files (GeoJSON and CSV) are formatted and placed in the expected directories.
   - The backend server runs on `http://localhost:8000` and the frontend on `http://localhost:3000`.
   - Users have a modern browser that supports the necessary JavaScript APIs for rendering the map and handling dynamic queries.
+  - No database has been implemented since the focus is on demonstrating geospatial data visualization and querying, and on keeping the app structure simple and easily deployable.
   - No advanced user authentication or security mechanisms are implemented, as the focus is on demonstrating geospatial data visualization and querying.
-
-## Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch (e.g., `git checkout -b feature/YourFeature`).
-3. Commit your changes (e.g., `git commit -m 'Add new feature'`).
-4. Push to your branch (e.g., `git push origin feature/YourFeature`).
-5. Open a pull request detailing your changes.
-
-Ensure your code adheres to the established code quality and style guidelines.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ## Contact
 elfekhar.inssaf@gmail.com
