@@ -1,0 +1,13 @@
+/* Global styles */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Map container and sidebar get their own styling in their CSS files */
